@@ -1,0 +1,40 @@
+ 1. lista zawartości sektora (użyć defaultListModel!!!! (custom object)
+2.sprzedaj rośliny button (zaznaczamy wpis z listy zawartości sektora i dodajemy tylko liczbę sadzonek do sprzedaży)
+
+///////////////
+POZOSTAłO do zrobienia:
+wszystko związane z komunikatami i uodpornianiem na użytkowników-idiotów czyli:
+<<<<<<< .mine
+1. jeśli sektor ma zawartość to nie można go usunąć + komunikat //done
+2. jeśli istnieją rośliny danego gat. to nie można usunąć gatunku + komunikat //done
+3. parametry nasłonecznienie i nawodnienie mają WSZĘDZIE przyjmować wartości od 1 do 5
+||||||| .r5668
+1. jeśli sektor ma zawartość to nie można go usunąć + komunikat
+2. jeśli istnieją rośliny danego gat. to nie można usunąć gatunku + komunikat
+3. parametry nasłonecznienie i nawodnienie mają WSZĘDZIE przyjmować wartości od 1 do 5
+=======
+ALREADY DONE 1. jeśli sektor ma zawartość to nie można go usunąć + komunikat
+DONE 2. jeśli istnieją rośliny danego gat. to nie można usunąć gatunku + komunikat
+DONE 3. parametry nasłonecznienie i nawodnienie mają WSZĘDZIE przyjmować wartości od 1 do 5
+>>>>>>> .r5669
+    <idealne rozwiązanie: zamienić odpowiadające im textField'y na JSpinnery>
+DONE 4. żaden int nie może być ujemny (popsuje to param. miejsca,cen,ilości sadzonek,czasu rozwoju, sprzedaży itd.)
+    <też można użyć JSpinnerów>
+DONE 5. !!!kupowanie roslin danego gat. w sektorze tylko spełniającym wymagania!!!!
+	<if'y w kupRoslinyButton + powiadomienie> //done
+DONE 6. czas max rozwoju zawsze musi być większy od czasu min.rozwoju <też można Jspinner>
+7. pousuwać zbędne rzeczy i ładnie sformatować
+Możliwe, że coś jeszcze. Generalnie nie są to bardzo skomplikowane rzeczy, może nawet damy radę oddać w poniedziałek.
+<jutro muszę się uczyć na algebrę, nie wiem ile i czy w ogóle coś dam radę zrobić ;_; >
+
+///////////////////////////////////////////////////////////////////////////
+/////fałszywy alarm z algebrą, jest za tydzień
+DONE 1. W NowySektorGUI -> 1 komunikat w zaznaczonym miejscu
+DONE 2. w NowyGatunekGUI -> 2 komunikat w zaz. miejscu
+DONE 3. komunikat w usuńGatButton  <HodowlaGUI>
+DONE 4. komunikat w kupRoslinyButton  <HodowlaGUI>
+DONE 5. komunikat sprzedajRoslinyButton   <HodowlaGUI>
+5. TEST DZIAłANIA (może nie wyłapałam jakiś błedów, jak coś znajdziesz-pisz)
+DONE 6. pousuwać zbędne rzeczy i ładnie sformatować
+7. Diagram klas!!! (chyba intelij miał taką funkcję ale nie jestem pewna)
+

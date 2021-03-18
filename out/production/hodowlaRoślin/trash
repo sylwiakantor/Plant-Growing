@@ -1,0 +1,111 @@
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+
+public class test {
+    public static void main() {
+    //    SimpleDateFormat myFormat = new SimpleDateFormat("dd MM yyyy"); ///!!!!dodane
+    //    Date date = new Date();
+    //    System.out.print(myFormat.format(date));
+
+        HashMap<String,Integer> map = new HashMap<String,Integer>();
+        map.put("a",2);
+        map.put("b",4);
+        map.put("c",5);
+        map.put("d",7);
+        List<Value> list = new ArrayList<Value>(map.values());
+        System.out.println(map(2));
+    }
+    List<Rosliny> zawartoscSektora = new ArrayList<Rosliny>(hmSektorow.get(nazwaSektoru).hmRosliny.keySet());
+    int liczbaSadzonekDoSprzedarzy = iloscSadzonekDoSprzedazy;
+    //sortByDate (najstarsze są pierwsze)//bubblesort
+    int inputLength = zawartoscSektora.size();
+    Rosliny temp;
+    boolean is_sorted;
+        for (int i = 0; i < inputLength; i++){
+        is_sorted = true;
+
+        for (int j = 1; j < (inputLength - i); j++) {
+            Date a = myFormat1.parse(zawartoscSektora.get(j-1).getDzienKupna());
+            Date b = myFormat1.parse(zawartoscSektora.get(j).getDzienKupna());
+            if (myFormat1.parse(zawartoscSektora.get(j-1).getDzienKupna()).getTime() > input[j]) {
+                temp = input[j - 1];
+                input[j - 1] = input[j];
+                input[j] = temp;
+                is_sorted = false;
+            }
+
+        }
+}
+
+
+///////////////////obsługa stanu
+    String fileNameCurrent = "void";
+    @Override
+    public void preparingDir() {
+        File dirHodowla = new File(System.getProperty("user.dir") + "/Hodowla");
+        File dirHistory = new File(System.getProperty("user.dir") + "/Hodowla/History");
+        if  (dirHodowla.exists() == false) {
+            dirHodowla.mkdir();
+            dirHistory.mkdir();
+        }else if (dirHodowla.exists() == true && dirHodowla.isDirectory() == false){
+            File imposter = new File(System.getProperty("user.dir") + "/imposter_hodowla");
+            dirHodowla.renameTo(imposter);
+            dirHodowla.mkdir();
+            dirHistory.mkdir();
+        } else if (dirHistory.exists() == false){
+            dirHistory.mkdir();
+        }
+    }
+
+
+
+    @Override
+    public void zapiszStan() throws FileNotFoundException {
+        File last_save = new File(System.getProperty("user.dir") + "/Hodowla/last_save");
+        if (last_save.exists() ==true){
+            Scanner in = new Scanner(last_save);
+
+            String DATE_OF_SAVE = in.nextLine();
+            String PreviousFileName = DATE_OF_SAVE.replace("DATE_OF_SAVE","");
+            File previous_save = new File(System.getProperty("user.dir") + "/Hodowla/History/"+PreviousFileName);
+            last_save.renameTo(previous_save);
+            PrintWriter writer = new PrintWriter(last_save);
+            writer.print("");
+            writer.close();
+
+        }
+        //zapis właściwy
+    }
+
+    @Override
+    public void zaladujStan() throws FileNotFoundException {
+        File last_save = new File(System.getProperty("user.dir") + "/Hodowla/last_save");
+        if (last_save.exists() ==true){
+            Scanner in = new Scanner(last_save);
+
+
+        }
+
+    }
+
+
+
+import java.io.FileNotFoundException;
+
+public interface StanHodowli {
+    //zapis
+
+    void zapiszStan() throws FileNotFoundException;
+
+    //utwórz katalog hodowla i history
+    void preparingDir();
+
+
+    //load
+    void zaladujStan() throws FileNotFoundException;
+
+
+}
